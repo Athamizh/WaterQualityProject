@@ -121,3 +121,10 @@ Assisted with documentation and GitHub repository management
 - Thresholds are dataset-dependent; calibration helps but may vary by location.
 - Quality flags may differ across datasets; column_map may need adjustments.
 
+## Project Assumptions
+
+- Sensor readings are assumed to be representative of real-world water conditions.
+- Missing or low-quality sensor values are filtered conservatively to avoid false alarms.
+- Risk scoring is rule-based and deterministic, prioritizing interpretability over prediction.
+- Thresholds and weights are calibrated using dataset percentiles and may vary across regions.
+- The system is designed for educational and analytical purposes, not regulatory decisions.
