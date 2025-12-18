@@ -19,6 +19,10 @@ Water quality monitoring is a fundamental problem in environmental science and e
 
 The program uses publicly available water quality measurements collected from Brisbane waterways. These measurements include physical and chemical indicators such as pH, turbidity, dissolved oxygen, temperature, salinity, and chlorophyll. The system validates the input data, handles missing or low-quality records, computes a risk score for each sample using a transparent, rule-based model, and classifies the sample accordingly. The emphasis of the solution is on interpretability, modular design, and reproducibility rather than black-box prediction.
 
+## Data Source
+Publicly available Brisbane water quality sensor dataset (CSV).
+This project uses the dataset only for educational purposes.
+
 Program Structure and How to Use the Program
 Program Structure
 
@@ -116,3 +120,4 @@ Assisted with documentation and GitHub repository management
 - Rule-based scoring is interpretable but not a machine learning model.
 - Thresholds are dataset-dependent; calibration helps but may vary by location.
 - Quality flags may differ across datasets; column_map may need adjustments.
+
