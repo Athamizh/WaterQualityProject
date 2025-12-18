@@ -43,6 +43,9 @@ class WaterQualityModel:
         if missing_w:
             raise DataValidationError(f"Missing weights keys: {sorted(missing_w)}")
 
+    # Weighted average of feature badness values.
+    # Final score normalized to [0,1] to make cutoff comparable across samples.
+
     def feature_badness(self, s: WaterSample) -> Dict[str, float]:
         """Compute per-feature badness in [0,1]."""
         s.validate()
@@ -139,3 +142,4 @@ def default_model() -> WaterQualityModel:
         "temperature": 0.05,
     }
     return WaterQualityModel(thresholds=thresholds, weights=weights, unsafe_cutoff=0.60)
+
