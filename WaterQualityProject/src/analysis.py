@@ -20,6 +20,7 @@ def summarize_alerts(results: List[Tuple[WaterSample, float, str]]) -> Dict[str,
     worst = sorted(results, key=lambda t: t[1], reverse=True)[:5]  # lambda (Part 2)
     return {"total": len(results), "safe": safe_count, "unsafe": unsafe_count, "top5_worst": worst}
 
+# Generator yields only Unsafe samples to avoid storing large alert lists in memory.
 
 def alert_generator(results: Iterable[Tuple[WaterSample, float, str]]):
     """Generator yielding unsafe alerts (Part 2 generator)."""
@@ -93,3 +94,4 @@ def build_calibrated_model(samples: List[WaterSample], base_weights: Dict[str, f
     scores = np.array([tmp.risk_score(s) for s in samples], dtype=float)
     cutoff = float(np.percentile(scores, unsafe_percentile))
     return WaterQualityModel(thresholds=thresholds, weights=weights, unsafe_cutoff=cutoff)
+
