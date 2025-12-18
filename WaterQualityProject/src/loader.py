@@ -32,7 +32,10 @@ class DatasetLoader:
     )
 
     def load_dataframe(self) -> pd.DataFrame:
-        """Load CSV into a DataFrame (meaningful I/O)."""
+        """Load CSV into a DataFrame (meaningful I/O).
+        This method handles file access and parsing errors explicitly to ensure
+        that downstream analysis only runs on successfully loaded data.
+        """
         try:
             return pd.read_csv(self.csv_path)
         except FileNotFoundError:
@@ -121,3 +124,4 @@ class DatasetLoader:
             samples.append(s)
 
         return samples
+
