@@ -27,3 +27,9 @@ def test_risk_increases_with_higher_turbidity():
     low = WaterSample("L", None, 7.2, 1.0, 500.0, 7.0, 25.0, 5.0, 5.0)
     high = WaterSample("H", None, 7.2, 20.0, 500.0, 7.0, 25.0, 5.0, 5.0)
     assert model.risk_score(high) >= model.risk_score(low)
+
+
+def test_model_returns_safe_for_normal_conditions():
+    model = default_model()
+    s = WaterSample("S", None, 7.2, 1.0, 500.0, 7.0, 25.0, 1.0, 2.0)
+    assert model.classify(s) == "Safe"
