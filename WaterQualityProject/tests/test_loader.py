@@ -6,6 +6,10 @@ from src.exceptions import DataValidationError
 
 
 def test_loader_missing_required_columns_raises():
+    """
+    Ensure DatasetLoader raises DataValidationError
+    when required columns are missing from the input DataFrame.
+    """
     # Intentionally missing required columns (should raise)
     df = pd.DataFrame(
         {
@@ -17,3 +21,4 @@ def test_loader_missing_required_columns_raises():
     loader = DatasetLoader(csv_path="dummy.csv")
     with pytest.raises(DataValidationError):
         loader.build_samples(df)
+
