@@ -63,6 +63,14 @@ Select the virtual environment as the Jupyter kernel.
 
 Click Run All to execute the entire program.
 
+### Quick Start (Command Line)
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # macOS/Linux
+pip install -r requirements.txt
+python -m pytest -q
+
 When executed, the notebook automatically:
 
 generates the required Python modules,
