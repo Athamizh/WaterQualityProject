@@ -111,3 +111,8 @@ Assisted with data analysis and threshold selection
 Contributed to debugging and validation
 
 Assisted with documentation and GitHub repository management
+
+## Limitations
+- Rule-based scoring is interpretable but not a machine learning model.
+- Thresholds are dataset-dependent; calibration helps but may vary by location.
+- Quality flags may differ across datasets; column_map may need adjustments.
